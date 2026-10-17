@@ -1,0 +1,164 @@
+[
+  {
+    "name": "two ready, one failed",
+    "rows": [
+      {
+        "filename": "synthetic-mountains.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 60,
+        "status": "ready"
+      },
+      {
+        "filename": "synthetic-dragon.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 45,
+        "status": "ready"
+      },
+      {
+        "filename": "synthetic-failed.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 90,
+        "status": "failed",
+        "failure_reason": null
+      }
+    ],
+    "status": 200,
+    "eligible_count": 2
+  },
+  {
+    "name": "empty",
+    "rows": [],
+    "status": 200,
+    "eligible_count": 0
+  },
+  {
+    "name": "processing and known failure",
+    "rows": [
+      {
+        "filename": "synthetic-mountains.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 60,
+        "status": "processing"
+      },
+      {
+        "filename": "synthetic-failed.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 90,
+        "status": "failed",
+        "failure_reason": "Synthetic decode error"
+      }
+    ],
+    "status": 200,
+    "eligible_count": 0
+  },
+  {
+    "name": "unknown status",
+    "rows": [
+      {
+        "filename": "synthetic-mountains.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 60,
+        "status": "mystery"
+      }
+    ],
+    "status": 503
+  },
+  {
+    "name": "duplicate filename",
+    "rows": [
+      {
+        "filename": "synthetic-mountains.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 60,
+        "status": "ready"
+      },
+      {
+        "filename": "synthetic-mountains.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 60,
+        "status": "ready"
+      }
+    ],
+    "status": 503
+  },
+  {
+    "name": "invalid duration",
+    "rows": [
+      {
+        "filename": "synthetic-mountains.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 0,
+        "status": "ready"
+      }
+    ],
+    "status": 503
+  },
+  {
+    "name": "boolean duration",
+    "rows": [
+      {
+        "filename": "synthetic-mountains.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": true,
+        "status": "ready"
+      }
+    ],
+    "status": 503
+  },
+  {
+    "name": "non-list",
+    "rows": {},
+    "status": 503
+  },
+  {
+    "name": "null row",
+    "rows": [
+      null
+    ],
+    "status": 503
+  },
+  {
+    "name": "missing metadata",
+    "rows": [
+      {
+        "status": "ready"
+      }
+    ],
+    "status": 503
+  },
+  {
+    "name": "unknown field",
+    "rows": [
+      {
+        "filename": "synthetic-mountains.mp4",
+        "source": "Synthetic fixture; no media file",
+        "license": "Synthetic metadata only; no media license asserted",
+        "attribution": "TwelveLabs Video Lab test fixture",
+        "duration_seconds": 60,
+        "status": "ready",
+        "secret": "synthetic"
+      }
+    ],
+    "status": 503
+  }
+]

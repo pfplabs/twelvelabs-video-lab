@@ -1,0 +1,6 @@
+# Chapter 2 configuration and managed-search SDK (live use requires approval).
+twelvelabs
+python-dotenv
+# Reserved for later chapters; not imported or used by chapter 2.
+numpy
+boto3
