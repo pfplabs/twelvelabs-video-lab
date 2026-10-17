@@ -1,0 +1,16 @@
+# Secrets and local state never enter Git.
+.env
+node_modules/
+.venv/
+__pycache__/
+# Local results, media, vectors and resume state stay on your disk.
+local-results/
+media/
+vectors/
+state.json
+bedrock-state.json
+# The workbench builds its fixture from local results; only synthetic
+# demo fixtures under workbench/public/demo/ are committed.
+workbench/public/fixtures.json
+workbench/node_modules/
+workbench/dist/
