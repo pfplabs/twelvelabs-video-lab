@@ -70,8 +70,8 @@ function clipPath(root, clip) {
 
 export async function verifyManifest(root, manifest) {
   if (!manifest || typeof manifest.corpus !== 'string' || !manifest.corpus.trim() ||
-      !Array.isArray(manifest.clips) || manifest.clips.length !== 3) {
-    throw new LabError('The manifest must identify a corpus and exactly three clips.');
+      !Array.isArray(manifest.clips) || manifest.clips.length !== 2) {
+    throw new LabError('The manifest must identify a corpus and exactly two clips.');
   }
   const ids = new Set();
   for (const clip of manifest.clips) {
@@ -94,8 +94,8 @@ export async function verifyManifest(root, manifest) {
 export async function buildManifest(root = ROOT, probe = durationSec) {
   let names;
   try { names = (await readdir(join(root, 'media'))).filter(name => name.endsWith('.mp4')).sort(); }
-  catch { throw new LabError('Cannot find media/. Put the three selected MP4s there first.'); }
-  if (names.length !== 3) throw new LabError('media/ must contain the three selected MP4s before generating the manifest.');
+  catch { throw new LabError('Cannot find media/. Put the two selected MP4s there first.'); }
+  if (names.length !== 2) throw new LabError('media/ must contain the two selected MP4s before generating the manifest.');
   const output = join(root, 'media-manifest.json');
   const existing = await readJson(output);
   if (existing !== undefined) {
@@ -131,6 +131,6 @@ export function reportError(error) {
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   if (process.argv.length !== 2) reportError(new LabError('Run node media-manifest.mjs without arguments.'));
   else buildManifest().then(({ preserved }) => console.log(preserved
-    ? 'Verified three clips; existing corpus and ground_truth preserved.'
-    : 'Wrote media-manifest.json with three clips. Fill ground_truth by hand.')).catch(reportError);
+    ? 'Verified two clips; existing corpus and ground_truth preserved.'
+    : 'Wrote media-manifest.json with two clips. Fill ground_truth by hand.')).catch(reportError);
 }
