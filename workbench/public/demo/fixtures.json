@@ -1,0 +1,222 @@
+{
+  "corpus": "synthetic-demo",
+  "synthetic": true,
+  "clips": [
+    {
+      "id": "demo-clip-01",
+      "title": "Demo: notebook and mug",
+      "durationSec": 30,
+      "mediaFile": null,
+      "groundTruth": [
+        {
+          "startSec": 2,
+          "endSec": 6,
+          "label": "person opens notebook"
+        },
+        {
+          "startSec": 12,
+          "endSec": 15,
+          "label": "red mug moves right"
+        }
+      ],
+      "scenes": [
+        {
+          "startSec": 0,
+          "endSec": 6,
+          "action": "a person opens a notebook",
+          "uncertainty": "unconfirmed"
+        },
+        {
+          "startSec": 12,
+          "endSec": 15,
+          "action": "a red mug moves right",
+          "uncertainty": "unconfirmed"
+        }
+      ],
+      "segments": [
+        {
+          "startSec": 0,
+          "endSec": 6,
+          "embedding": [
+            -0.3235,
+            -0.2647,
+            -0.2059,
+            -0.1471,
+            -0.0882,
+            -0.0294,
+            0.0294,
+            0.0882
+          ],
+          "source": "synthetic"
+        },
+        {
+          "startSec": 6,
+          "endSec": 12,
+          "embedding": [
+            -0.1471,
+            -0.0294,
+            0.0882,
+            0.2059,
+            0.3235,
+            0.4412,
+            -0.4412,
+            -0.3235
+          ],
+          "source": "synthetic"
+        },
+        {
+          "startSec": 12,
+          "endSec": 18,
+          "embedding": [
+            0.0294,
+            0.2059,
+            0.3824,
+            -0.4412,
+            -0.2647,
+            -0.0882,
+            0.0882,
+            0.2647
+          ],
+          "source": "synthetic"
+        }
+      ],
+      "summary": "Synthetic summary: a person opens a notebook, then moves a red mug.",
+      "corrections": [
+        {
+          "startSec": 12,
+          "endSec": 15,
+          "decision": "accept",
+          "note": "matches ground truth"
+        }
+      ]
+    },
+    {
+      "id": "demo-clip-02",
+      "title": "Demo: pen and clap",
+      "durationSec": 24,
+      "mediaFile": null,
+      "groundTruth": [
+        {
+          "startSec": 4,
+          "endSec": 7,
+          "label": "pen rolls off table"
+        },
+        {
+          "startSec": 16,
+          "endSec": 17,
+          "label": "single clap"
+        }
+      ],
+      "scenes": [
+        {
+          "startSec": 4,
+          "endSec": 7,
+          "action": "a pen rolls off the table",
+          "uncertainty": "unconfirmed"
+        }
+      ],
+      "segments": [
+        {
+          "startSec": 0,
+          "endSec": 8,
+          "embedding": [
+            0.2059,
+            0.4412,
+            -0.3235,
+            -0.0882,
+            0.1471,
+            0.3824,
+            -0.3824,
+            -0.1471
+          ],
+          "source": "synthetic"
+        },
+        {
+          "startSec": 8,
+          "endSec": 16,
+          "embedding": [
+            0.3824,
+            -0.3235,
+            -0.0294,
+            0.2647,
+            -0.4412,
+            -0.1471,
+            0.1471,
+            0.4412
+          ],
+          "source": "synthetic"
+        },
+        {
+          "startSec": 16,
+          "endSec": 24,
+          "embedding": [
+            -0.4412,
+            -0.0882,
+            0.2647,
+            -0.3824,
+            -0.0294,
+            0.3235,
+            -0.3235,
+            0.0294
+          ],
+          "source": "synthetic"
+        }
+      ],
+      "summary": "Synthetic summary: a pen rolls away; later, one clap.",
+      "corrections": []
+    }
+  ],
+  "queries": [
+    {
+      "text": "a person opens a notebook",
+      "embedding": [
+        -0.3235,
+        -0.2647,
+        -0.2059,
+        -0.1471,
+        -0.0882,
+        -0.0294,
+        0.0294,
+        0.0882
+      ]
+    },
+    {
+      "text": "a single clap",
+      "embedding": [
+        -0.4412,
+        -0.0882,
+        0.2647,
+        -0.3824,
+        -0.0294,
+        0.3235,
+        -0.3235,
+        0.0294
+      ]
+    },
+    {
+      "text": "a window opens",
+      "embedding": [
+        0.0882,
+        -0.3824,
+        0.1471,
+        -0.3235,
+        0.2059,
+        -0.2647,
+        0.2647,
+        -0.2059
+      ]
+    }
+  ],
+  "jockey": [
+    {
+      "question": "Synthetic example: what happens to the red mug?",
+      "answer": "Synthetic answer: the mug moves right once. Real answers appear here after chapter 4.",
+      "citations": [
+        {
+          "startSec": 12,
+          "endSec": 15
+        }
+      ]
+    }
+  ]
+}

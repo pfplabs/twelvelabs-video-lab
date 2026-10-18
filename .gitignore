@@ -12,5 +12,6 @@ bedrock-state.json
 # The workbench builds its fixture from local results; only synthetic
 # demo fixtures under workbench/public/demo/ are committed.
 workbench/public/fixtures.json
+workbench/public/media/
 workbench/node_modules/
 workbench/dist/
